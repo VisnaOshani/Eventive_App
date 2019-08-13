@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Eventive</string>
+    <string name="btn1">SIGN UP</string>
+    <string name="btn2">LOGIN</string>
+    <string name="banner1">Sign Up For Free</string>
+    <string name="btn3">GET STARTED</string>
+    <string name="back">BACK</string>
+    <string name="save">SAVE</string>
+    <string name="delete">DELETE</string>
+    <string name="banner2">Budget Details</string>
+    <string name="spinner">Category</string>
+    <string name="banner3">Budget List</string>
+
+
+</resources>
