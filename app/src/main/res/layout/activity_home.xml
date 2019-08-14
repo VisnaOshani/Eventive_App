@@ -8,36 +8,20 @@
     tools:context=".Home">
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/imageButton7"
         android:layout_width="143dp"
         android:layout_height="144dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399"
-        app:srcCompat="@drawable/guests" />
-
-    <ImageButton
-        android:id="@+id/imageButton7"
-        android:layout_width="143dp"
-        android:layout_height="144dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:onClick="budget"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.399"
+        app:layout_constraintVertical_bias="0.464"
         app:srcCompat="@drawable/budget" />
 
     <ImageButton
@@ -50,11 +34,11 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintHorizontal_bias="0.908"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746"
-        app:srcCompat="@drawable/events1" />
+        app:layout_constraintVertical_bias="0.464"
+        app:srcCompat="@drawable/guests" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -66,10 +50,26 @@
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.746"
-        app:srcCompat="@drawable/shopping1" />
+        app:layout_constraintVertical_bias="0.802"
+        app:srcCompat="@drawable/shopping" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="143dp"
+        android:layout_height="144dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.908"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.802"
+        app:srcCompat="@drawable/event" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
