@@ -19,6 +19,11 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void event(View view){
+        Intent intent = new Intent(Home.this,Add_events.class);
+        startActivity(intent);
+    }
+
 
 
 }

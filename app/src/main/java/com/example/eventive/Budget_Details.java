@@ -19,6 +19,11 @@ public class Budget_Details extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void backToBudgets(View view){
+        Intent intent = new Intent(Budget_Details.this,Add_Budgets.class);
+        startActivity(intent);
+    }
+
 
 
 
