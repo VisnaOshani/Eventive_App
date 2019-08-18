@@ -77,6 +77,7 @@
         android:ems="10"
         android:hint="Name or note"
         android:inputType="textPersonName"
+        android:textColorHint="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +96,8 @@
         android:layout_marginBottom="8dp"
         android:text="@string/spinner"
         android:textAlignment="viewStart"
+        android:textColorHighlight="@android:color/black"
+        android:textColorHint="@android:color/black"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,7 +105,7 @@
         app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.378" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -112,12 +115,15 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:popupBackground="@color/colorAccent"
+        android:popupElevation="20dp"
+        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.319"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459" />
+        app:layout_constraintVertical_bias="0.457" />
 
     <EditText
         android:id="@+id/editText5"
@@ -130,6 +136,7 @@
         android:ems="10"
         android:hint="Estimated Amount"
         android:inputType="numberDecimal"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.327"
@@ -148,6 +155,7 @@
         android:ems="10"
         android:hint="Paid Amount"
         android:inputType="numberDecimal"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.327"
@@ -166,6 +174,7 @@
         android:ems="10"
         android:hint="Balance"
         android:inputType="numberDecimal"
+        android:textColorHint="@android:color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.327"

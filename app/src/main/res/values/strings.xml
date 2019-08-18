@@ -15,4 +15,18 @@
     <string name="splashView"> WELCOME TO EVENTIVE</string>
 
 
+
+    <string name="category_drop_down">Choose a category</string>
+
+    <string-array name="category_arrays">
+        <item>Accessories</item>
+        <item>Accommodation</item>
+        <item>Attire and accessories</item>
+        <item>Flower and decor</item>
+        <item>Miscellaneous</item>
+        <item>Music and show</item>
+        <item>Photo and video</item>
+        <item>Transportation</item>
+    </string-array>
+
 </resources>
