@@ -4,9 +4,9 @@
     <string name="btn2">LOGIN</string>
     <string name="banner1">Sign Up For Free</string>
     <string name="btn3">GET STARTED</string>
-    <string name="save">SAVE</string>
+    <string name="saveV">SAVE</string>
     <string name="delete">DELETE</string>
-    <string name="banner2">Budget Details</string>
+    <string name="banner2V">Budget Details</string>
     <string name="spinner">Category</string>
     <string name="banner3">Budget List</string>
 
@@ -16,6 +16,10 @@
 
 
     <string name="category_drop_down">Choose a category</string>
+    <string name="nameV"></string>
+    <string name="estimatedAmount" />
+    <string name="paidAmount" />
+    <string name="balance" />
 
     <string-array name="category_arrays">
         <item>Accessories</item>

@@ -8,7 +8,6 @@
     tools:context=".Budget_Details">
 
     <Button
-        android:id="@+id/button2"
         android:layout_width="178dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -17,26 +16,26 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/imgbtn_curve"
         android:elevation="30dp"
-        android:onClick="saveBudgets"
-        android:text="@string/save"
+        android:onClick="addBudget"
+        android:text="@string/saveV"
         android:textColor="@android:color/black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.423"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.938" />
+        app:layout_constraintVertical_bias="0.94" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/banner2V"
         android:layout_width="212dp"
         android:layout_height="58dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/banner2"
+        android:text="@string/banner2V"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="28sp"
@@ -48,7 +47,7 @@
         app:layout_constraintVertical_bias="0.05" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/nameV"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -56,7 +55,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Name or note"
+        android:hint="NOTE"
         android:inputType="textPersonName"
         android:textColorHint="@android:color/black"
         android:textSize="20sp"
@@ -65,28 +64,11 @@
         app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="273dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:popupBackground="@color/colorAccent"
-        android:popupElevation="20dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000002" />
+        app:layout_constraintVertical_bias="0.225"
+        tools:text="@string/nameV" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/estimatedAmount"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -102,10 +84,11 @@
         app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48000002" />
+        app:layout_constraintVertical_bias="0.48000002"
+        tools:text="@string/estimatedAmount" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/paidAmount"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -121,10 +104,11 @@
         app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61" />
+        app:layout_constraintVertical_bias="0.61"
+        tools:text="@string/paidAmount" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/balance"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -140,6 +124,21 @@
         app:layout_constraintHorizontal_bias="0.327"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.74" />
+        app:layout_constraintVertical_bias="0.74"
+        tools:text="@string/balance" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="281dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.298"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
