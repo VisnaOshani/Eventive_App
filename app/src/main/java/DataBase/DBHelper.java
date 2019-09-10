@@ -2,8 +2,13 @@ package DataBase;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+
+import Models.Fbudget;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -52,5 +57,32 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
     }
+
+    public ArrayList<Fbudget> readAllBudget(){
+        SQLiteDatabase db = getReadableDatabase();
+        String[] projection = {EventMaster.budget.COLUMN_NOTE_,EventMaster.budget._ID , EventMaster.budget.COLUMN_AMOUNT , EventMaster.budget.COLUMN_TYPE , EventMaster.budget.COLUMN_BALANCE};
+
+        String sortOrder = EventMaster.budget.COLUMN_AMOUNT;
+
+        Cursor values = db.query(EventMaster.budget.TABLE_NAME,projection,null,null,null,null,sortOrder);
+
+        ArrayList<Fbudget> buds = new ArrayList<Fbudget>();
+
+        while (values.moveToNext()){
+            Fbudget bud = new Fbudget();
+            String budnote = values.getString( values.getColumnIndexOrThrow( EventMaster.budget.COLUMN_NOTE_));
+            String budtype = values.getString( values.getColumnIndexOrThrow( EventMaster.budget.COLUMN_TYPE));
+            String budbala = values.getString( values.getColumnIndexOrThrow(EventMaster.budget.COLUMN_BALANCE));
+            bud.setType( budtype );
+            bud.setNote( budnote);
+            bud.setBalance( budbala );
+            bud.setID( values.getInt( values.getColumnIndexOrThrow( EventMaster.budget._ID)));
+            buds.add( bud );
+        }
+        return buds;
+    }
+
+
+
 }
 

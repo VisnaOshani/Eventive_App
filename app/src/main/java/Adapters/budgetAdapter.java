@@ -1,0 +1,72 @@
+package Adapters;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.eventive.Add_Budgets;
+import com.example.eventive.R;
+import java.util.ArrayList;
+import Models.Fbudget;
+
+public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdapterViewHolder> {
+
+    private ArrayList<Fbudget> arrayList;
+   // private onBudgetListener vonBudgetListner;
+
+    public budgetAdapter(ArrayList<Fbudget> arrayList){
+        this.arrayList = arrayList;
+       // this.vonBudgetListner = onbudgetListener;
+    }
+
+    @NonNull
+    @Override
+    public budgetAdapter.budgetAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.budget_list,parent,false);
+        return new budgetAdapterViewHolder(v);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull budgetAdapterViewHolder holder, int i) {
+        Fbudget object =arrayList.get(i);
+        holder.note.setText(object.getNote());
+        holder.type.setText( object.getType());
+        holder.balance.setText( object.getBalance() );
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return arrayList.size();
+    }
+
+    public static class budgetAdapterViewHolder extends RecyclerView.ViewHolder {
+        TextView note;
+        TextView type;
+        TextView balance;
+      //  onBudgetListener onBudgetListener;
+
+        public budgetAdapterViewHolder(@NonNull View itemView) {
+            super(itemView);
+            note = itemView.findViewById(R.id.tv_note);
+            type = itemView.findViewById(R.id.tv_type);
+            balance = itemView.findViewById(R.id.tv_balance);
+
+           //this.onBudgetListener = onBudgetListener;
+           // itemView.setOnClickListener(this);
+    }
+
+//        @Override
+//        public void onClick(View view) {
+//            onBudgetListener.onBudgetClick(getAdapterPosition());
+//        }
+//
+//
+//        public interface onBudgetListener{
+//            void onBudgetClick(int position);
+//        }
+    }
+}

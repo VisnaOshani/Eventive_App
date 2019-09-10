@@ -45,8 +45,6 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         txtpamount = findViewById(R.id.paidAmount);
         txtbalance = findViewById(R.id.balance);
 
-        //spinner.setOnItemSelectedListener();
-
         vdb = new DBHelper(this);
 
     }

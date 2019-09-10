@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@android:color/white"
+    >
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="131dp"
+        android:layout_height="match_parent"
+        android:text="Empty Note"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="126dp"
+        android:layout_height="match_parent"
+        android:text="type"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_balance"
+        android:layout_width="137dp"
+        android:layout_height="match_parent"
+        android:text="200"
+        android:textAlignment="center"
+        android:textSize="20sp" />
+
+
+</LinearLayout>
