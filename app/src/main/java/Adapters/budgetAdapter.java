@@ -69,4 +69,5 @@ public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdap
 //            void onBudgetClick(int position);
 //        }
     }
+
 }

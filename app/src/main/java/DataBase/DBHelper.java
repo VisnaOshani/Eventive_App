@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -80,6 +81,16 @@ public class DBHelper extends SQLiteOpenHelper {
             buds.add( bud );
         }
         return buds;
+    }
+
+    public void deleteRead(int id){
+        SQLiteDatabase db = getReadableDatabase();
+
+        String Selection = EventMaster.budget._ID + " = ?";
+        String[] SelectionArgs = { String.valueOf(id)};
+
+        db.delete(EventMaster.budget.TABLE_NAME , Selection ,SelectionArgs);
+        Log.i("DB","Delete :" + id );
     }
 
 

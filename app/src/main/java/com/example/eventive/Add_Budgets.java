@@ -1,6 +1,8 @@
 package com.example.eventive;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -43,6 +46,8 @@ public class Add_Budgets extends AppCompatActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
 
+        new ItemTouchHelper(itemTouchHelprcallback).attachToRecyclerView(rv);
+
 
     }
 
@@ -55,4 +60,18 @@ public class Add_Budgets extends AppCompatActivity {
         Intent intent = new Intent(Add_Budgets.this,Home.class);
         startActivity(intent);
     }
+
+    ItemTouchHelper.SimpleCallback itemTouchHelprcallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
+            db.deleteRead(deleteid);
+            Toast.makeText(getApplicationContext(),"Deleted!",Toast.LENGTH_LONG).show();
+        }
+    };
 }
