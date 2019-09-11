@@ -11,8 +11,8 @@
     <string name="banner3">Budget List</string>
 
     <string name="banner4">Event List</string>
+    <string name="banner5">Event Details</string>
     <string name="splashView"> WELCOME TO EVENTIVE</string>
-
 
 
     <string name="category_drop_down">Choose a category</string>
