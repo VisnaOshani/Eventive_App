@@ -18,4 +18,9 @@ public class Add_events extends AppCompatActivity {
         Intent intent = new Intent(Add_events.this,Home.class);
         startActivity(intent);
     }
+
+    public void addEvents(View view){
+        Intent intent = new Intent(Add_events.this,event_details.class);
+        startActivity(intent);
+    }
 }
