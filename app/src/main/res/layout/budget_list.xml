@@ -6,6 +6,7 @@
     android:background="@android:color/white"
     >
 
+
     <TextView
         android:id="@+id/tv_note"
         android:layout_width="131dp"

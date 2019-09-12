@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/budget"
         android:layout_width="179dp"
         android:layout_height="247dp"
         android:layout_marginStart="32dp"
@@ -22,11 +22,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.006"
+        app:layout_constraintVertical_bias="0.16000003"
         app:srcCompat="@drawable/budget1" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/guests"
         android:layout_width="179dp"
         android:layout_height="247dp"
         android:layout_marginStart="32dp"
@@ -38,11 +38,11 @@
         app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.16000003"
         app:srcCompat="@drawable/guests" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/shopping"
         android:layout_width="179dp"
         android:layout_height="247dp"
         android:layout_marginStart="8dp"
@@ -54,11 +54,11 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.757"
+        app:layout_constraintVertical_bias="0.85"
         app:srcCompat="@drawable/shopping" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/event"
         android:layout_width="179dp"
         android:layout_height="247dp"
         android:layout_marginStart="8dp"
@@ -71,8 +71,23 @@
         app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintVertical_bias="0.85"
         app:srcCompat="@drawable/events" />
+
+    <ImageView
+        android:id="@+id/upimg"
+        android:layout_width="583dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/eventback" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
