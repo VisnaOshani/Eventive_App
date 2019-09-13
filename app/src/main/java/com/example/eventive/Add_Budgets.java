@@ -48,11 +48,6 @@ public class Add_Budgets extends AppCompatActivity {
 
         new ItemTouchHelper(itemTouchHelprcallback).attachToRecyclerView(rv);
 
-
-
-
-
-
     }
 
     public void addBudgets(View view){
