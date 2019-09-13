@@ -25,6 +25,9 @@ public class Home extends AppCompatActivity {
     }
 
 
-
+    public void shopping(View view){
+        Intent intent = new Intent(this,shopping_main.class);
+        startActivity(intent);
+    }
 }
 
