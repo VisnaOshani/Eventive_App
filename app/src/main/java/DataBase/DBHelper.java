@@ -36,7 +36,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public boolean addBud(String note,String type,String amount,String pamount,String balance){
 
         SQLiteDatabase db = getWritableDatabase();
-
+        int t = 10;
         ContentValues contentValues = new ContentValues();
 
         contentValues.put(EventMaster.budget.COLUMN_NOTE_,note);
