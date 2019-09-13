@@ -10,8 +10,7 @@ import android.widget.CalendarView;
 public class Calander_view extends AppCompatActivity {
 
     private CalendarView mcalander;
-    private static final String TAG = "Calander_view";
-
+    private static final String TAG = "calanderactivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

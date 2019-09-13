@@ -19,18 +19,6 @@
     <string name="estimatedAmount" />
     <string name="paidAmount" />
     <string name="balance" />
-    <string name="btnNewTask">New Task</string>
-    <string name="btnDeleteTask">Clear Tasks</string>
-
-    <string name="splashImg"></string>
-
-    <string name="upimg"></string>
-    
-    <string name="budget"></string>
-    <string name="event"></string>
-    <string name="shopping"></string>
-    <string name="guests"></string>
-
 
     <string-array name="category_arrays">
         <item>Accessories</item>
