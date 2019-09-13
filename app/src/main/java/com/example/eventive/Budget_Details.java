@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -24,7 +28,10 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
     private String Amount;
     private String Pamount;
     private String Balance;
+    private String gAmount, gPamount, gBalance;
+    private String b;
     private String label;
+    private double bal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,29 +52,67 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         txtpamount = findViewById(R.id.paidAmount);
         txtbalance = findViewById(R.id.balance);
 
+
         vdb = new DBHelper(this);
 
+        Amount = txtamount.getText().toString();
+        Pamount = txtpamount.getText().toString();
+
+        txtpamount.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if(s.length() != 0){
+                    if( txtamount.getText().toString().length() > 0  ){
+                        bal = Double.valueOf(txtamount.getText().toString() ) - Double.valueOf( txtpamount.getText().toString());
+                        txtbalance.setText( bal+"");
+                    }
+                }else{
+                    txtbalance.setText( "");
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+
+            }
+        });
     }
 
     public void addBudget(View view){
-        Note = txtnote.getText().toString();
-        Amount = txtamount.getText().toString();
-        Pamount = txtpamount.getText().toString();
-        Balance = txtbalance.getText().toString();
 
-        boolean result = vdb.addBud(Note,label,Amount,Pamount,Balance);
+        if (TextUtils.isEmpty(txtnote.getText())|| TextUtils.isEmpty(txtamount.getText()) || TextUtils.isEmpty(txtpamount.getText() )){
+            txtnote.setError("Enter your note!");
+            txtamount.setError("Enter estimated amount!");
+            txtpamount.setError("Enter paid amount!");
 
-        txtnote.getText().clear();
-        txtamount.getText().clear();
-        txtpamount.getText().clear();
-        txtbalance.getText().clear();
+            txtnote.requestFocus();
+            txtamount.requestFocus();
+            txtpamount.requestFocus();
+        }
+        else {
+            Note = txtnote.getText().toString();
+            Amount = txtamount.getText().toString();
+            Pamount = txtpamount.getText().toString();
+            Balance = txtbalance.getText().toString();
 
-        if(result == true){
-            Toast.makeText(getApplicationContext(),"Success!",Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this,Add_Budgets.class);
-            startActivity(intent);
-        }else{
-            Toast.makeText(getApplicationContext(),"Failed!",Toast.LENGTH_LONG).show();
+            boolean result = vdb.addBud(Note,label,Amount,Pamount,Balance);
+
+            txtnote.getText().clear();
+            txtamount.getText().clear();
+            txtpamount.getText().clear();
+            txtbalance.getText().clear();
+
+            if(result == true){
+                Toast.makeText(getApplicationContext(),"Success!",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this,Add_Budgets.class);
+                startActivity(intent);
+            }else{
+                Toast.makeText(getApplicationContext(),"Failed!",Toast.LENGTH_LONG).show();
+            }
         }
     }
 
