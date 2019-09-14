@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
     android:layout_height="match_parent"
-    tools:context=".Budget_Details">
+    android:background="@drawable/background"
+    tools:context=".EditDetails">
 
     <Button
-        android:id="@+id/savev"
+        android:id="@+id/editBtn"
         android:layout_width="178dp"
         android:layout_height="60dp"
         android:layout_marginStart="8dp"
@@ -17,7 +17,6 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/imgbtn_curve"
         android:elevation="30dp"
-        android:onClick="addBudget"
         android:text="@string/saveV"
         android:textColor="@android:color/black"
         android:textSize="28sp"
@@ -45,10 +44,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.05"
+        tools:text="@string/editBudDetails" />
 
     <EditText
-        android:id="@+id/nameV"
+        android:id="@+id/editNote"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
         tools:text="@string/nameV" />
 
     <EditText
-        android:id="@+id/estimatedAmount"
+        android:id="@+id/editAmount2"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -89,7 +89,7 @@
         tools:text="@string/estimatedAmount" />
 
     <EditText
-        android:id="@+id/paidAmount"
+        android:id="@+id/editPamount"
         android:layout_width="276dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"

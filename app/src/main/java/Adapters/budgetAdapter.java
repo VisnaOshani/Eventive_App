@@ -15,18 +15,20 @@ import Models.Fbudget;
 public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdapterViewHolder> {
 
     private ArrayList<Fbudget> arrayList;
-   // private onBudgetListener vonBudgetListner;
+    private OnBudgetListener vBudgetListener;
 
-    public budgetAdapter(ArrayList<Fbudget> arrayList){
+   //private budgetAdapterViewHolder.OnBudgetListener vonBudgetListner;
+
+    public budgetAdapter(ArrayList<Fbudget> arrayList, OnBudgetListener onBudgetListener){
         this.arrayList = arrayList;
-       // this.vonBudgetListner = onbudgetListener;
+        this.vBudgetListener = onBudgetListener;
     }
 
     @NonNull
     @Override
     public budgetAdapter.budgetAdapterViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.budget_list,parent,false);
-        return new budgetAdapterViewHolder(v);
+        return new budgetAdapterViewHolder(v, vBudgetListener);
     }
 
     @Override
@@ -43,31 +45,37 @@ public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdap
         return arrayList.size();
     }
 
-    public static class budgetAdapterViewHolder extends RecyclerView.ViewHolder {
+    public void filterList(ArrayList<Fbudget> filteredList) {
+        arrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
+
+    public static class budgetAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView note;
         TextView type;
         TextView balance;
-      //  onBudgetListener onBudgetListener;
+        OnBudgetListener onBudgetListener;
 
-        public budgetAdapterViewHolder(@NonNull View itemView) {
+        public budgetAdapterViewHolder(@NonNull View itemView, OnBudgetListener onBudgetListener){
             super(itemView);
             note = itemView.findViewById(R.id.tv_note);
             type = itemView.findViewById(R.id.tv_type);
             balance = itemView.findViewById(R.id.tv_balance);
 
-           //this.onBudgetListener = onBudgetListener;
-           // itemView.setOnClickListener(this);
+            this.onBudgetListener = onBudgetListener;
+            itemView.setOnClickListener(this);
     }
 
-//        @Override
-//        public void onClick(View view) {
-//            onBudgetListener.onBudgetClick(getAdapterPosition());
-//        }
-//
-//
-//        public interface onBudgetListener{
-//            void onBudgetClick(int position);
-//        }
+      @Override
+        public void onClick(View view) {
+            onBudgetListener.onBudgetClick(getAdapterPosition());
+        }
+
+    }
+
+    public interface OnBudgetListener{
+        void onBudgetClick(int position);
     }
 
 }

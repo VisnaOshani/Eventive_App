@@ -1,35 +1,35 @@
 <resources>
     <string name="app_name">Eventive</string>
-    <string name="btn1">SIGN UP</string>
-    <string name="btn2">LOGIN</string>
-    <string name="banner1">Sign Up For Free</string>
-    <string name="btn3">GET STARTED</string>
+
     <string name="saveV">SAVE</string>
     <string name="delete">DELETE</string>
-    <string name="banner2V">Budget Details</string>
+
     <string name="spinner">Category</string>
-    <string name="banner3">Budget List</string>
+    <string name="spinner2">Category</string>
 
     <string name="banner4">Event List</string>
-    <string name="splashView"> WELCOME TO EVENTIVE</string>
-
 
     <string name="category_drop_down">Choose a category</string>
+    <string name="budDetails">Budget Details</string>
     <string name="nameV"></string>
     <string name="estimatedAmount" />
     <string name="paidAmount" />
     <string name="balance" />
+    <string name="savev"></string>
     <string name="btnNewTask">New Task</string>
     <string name="btnDeleteTask">Clear Tasks</string>
 
     <string name="splashImg"></string>
 
     <string name="upimg"></string>
-    
     <string name="budget"></string>
     <string name="event"></string>
     <string name="shopping"></string>
     <string name="guests"></string>
+
+    <string name="budList">BUDGET LIST</string>
+    <string name="rviewv"></string>
+    <string name="addv"></string>
 
 
     <string-array name="category_arrays">
@@ -42,5 +42,13 @@
         <item>Photo and video</item>
         <item>Transportation</item>
     </string-array>
+
+
+    <string name="editBudDetails">Edit Details</string>
+    <string name="nameVedit"></string>
+    <string name="estimatedAmountedit"></string>
+    <string name="paidAmountedit"></string>
+    <string name="balanceedit"></string>
+    <string name="savevedit">SAVE</string>
 
 </resources>

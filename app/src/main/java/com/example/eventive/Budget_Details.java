@@ -10,7 +10,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -28,8 +27,6 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
     private String Amount;
     private String Pamount;
     private String Balance;
-    private String gAmount, gPamount, gBalance;
-    private String b;
     private String label;
     private double bal;
 
@@ -38,7 +35,7 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget__details);
 
-        Spinner spinner = findViewById(R.id.spinner);
+        Spinner spinner = findViewById(R.id.spinner2);
         ArrayAdapter<String> adapter =  new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.category_arrays));
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -47,7 +44,7 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         spinner.setOnItemSelectedListener(this);
 
         txtnote = findViewById(R.id.nameV);
-        txttype = findViewById(R.id.spinner);
+        txttype = findViewById(R.id.spinner2);
         txtamount =findViewById(R.id.estimatedAmount);
         txtpamount = findViewById(R.id.paidAmount);
         txtbalance = findViewById(R.id.balance);
@@ -142,4 +139,5 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }

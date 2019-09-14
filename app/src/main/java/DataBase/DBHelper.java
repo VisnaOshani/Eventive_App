@@ -93,6 +93,21 @@ public class DBHelper extends SQLiteOpenHelper {
         Log.i("DB","Delete :" + id );
     }
 
+    public void editBudget(String id, String note, String amount,String type, String pamount){
+        SQLiteDatabase db = getReadableDatabase();
+
+        ContentValues contentvalues = new ContentValues();
+        contentvalues.put(EventMaster.budget.COLUMN_NOTE_,note);
+        contentvalues.put(EventMaster.budget.COLUMN_TYPE,type);
+        contentvalues.put(EventMaster.budget.COLUMN_AMOUNT, amount);
+        contentvalues.put(EventMaster.budget.COLUMN_PAMOUNT,pamount);
+
+        String Selection = EventMaster.budget._ID + "= ?";
+        String SelectionArgs[] = {id};
+
+        db.update(EventMaster.budget.TABLE_NAME, contentvalues, Selection, SelectionArgs);
+    }
+
 
 
 }
