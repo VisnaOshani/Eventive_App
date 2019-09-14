@@ -3,139 +3,56 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/background"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".Add_events">
 
     <ImageView
         android:id="@+id/addevent"
-        android:layout_width="118dp"
-        android:layout_height="85dp"
+        android:layout_width="92dp"
+        android:layout_height="71dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/plus"
         android:onClick="addEvents"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.808"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/plus" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="112dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/imgbtn_curve"
-        android:text="@string/delete"
-        android:textColor="@android:color/black"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.148"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.946" />
+        app:layout_constraintVertical_bias="0.987" />
 
     <TextView
-        android:id="@+id/banner4"
-        android:layout_width="207dp"
-        android:layout_height="55dp"
+        android:id="@+id/textView2"
+        android:layout_width="181dp"
+        android:layout_height="49dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/banner4"
-        android:textAlignment="center"
-        android:textColor="#00AFF0"
+        android:text="Event List"
+        android:textColor="#00FFF0"
         android:textSize="30sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.041" />
 
-    <LinearLayout
-        android:id="@+id/Listviewevents"
-        android:layout_width="356dp"
-        android:layout_height="487dp"
+    <ListView
+        android:id="@+id/eventList"
+        android:layout_width="392dp"
+        android:layout_height="531dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:orientation="vertical"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/banner4"
-        app:layout_constraintVertical_bias="0.481" >
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"/>
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="item1" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:text="item2" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="37dp"
-            android:text="item3" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="item4" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:text="item5" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:text="item6" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:text="item7" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="match_parent"
-            android:layout_height="31dp"
-            android:text="item8" />
-
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="match_parent"
-            android:layout_height="36dp"
-            android:text="item9" />
-
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="match_parent"
-            android:layout_height="34dp"
-            android:text="item10" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -34,14 +34,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Event Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.139"
         tools:text="@string/one" />
 
     <EditText
@@ -60,7 +60,7 @@
         app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.376"
+        app:layout_constraintVertical_bias="0.243"
         tools:text="@string/two" />
 
     <EditText
@@ -85,8 +85,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="103dp"
-        android:layout_height="60dp"
+        android:layout_width="95dp"
+        android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -96,10 +96,10 @@
         android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877"
+        app:layout_constraintVertical_bias="0.92"
         tools:text="@string/button" />
 
     <EditText
@@ -123,18 +123,34 @@
 
     <Button
         android:id="@+id/btncalander"
-        android:layout_width="63dp"
-        android:layout_height="48dp"
+        android:layout_width="68dp"
+        android:layout_height="59dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@android:drawable/ic_menu_my_calendar"
-        android:onClick="caland"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.917"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.254" />
+
+    <Button
+        android:id="@+id/eventLis"
+        android:layout_width="97dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/evntbtn_curve"
+        android:text="View"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.921" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

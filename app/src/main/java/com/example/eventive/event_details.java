@@ -17,7 +17,8 @@ public class event_details extends AppCompatActivity {
 
     private static final String TAG = "event_details";
 
-    Button btn;
+    Button btn,btnlis;
+
 
     EditText txt_username, txt_date, loc_txt, not_txt;
     String username, date, loication, notes;
@@ -28,7 +29,7 @@ public class event_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
 
-
+        btnlis = findViewById(R.id.eventLis);
 
         txt_username = findViewById(R.id.one);
         txt_date = findViewById(R.id.two);
@@ -36,6 +37,8 @@ public class event_details extends AppCompatActivity {
         not_txt = findViewById(R.id.four);
 
         db = new DBHelper(this);
+
+
 
         btn = findViewById(R.id.btncalander);
         Intent incomingintent = getIntent();
@@ -52,6 +55,14 @@ public class event_details extends AppCompatActivity {
             }
         });
 
+       btnlis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(event_details.this,Add_events.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void addInfro(View view) {
@@ -61,18 +72,25 @@ public class event_details extends AppCompatActivity {
         loication = loc_txt.getText().toString();
         notes = not_txt.getText().toString();
 
+
         boolean result = db.addUser(username,date,loication,notes);
 
         if (result == true) {
 
             Toast.makeText(getApplicationContext(), "event added", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this,Add_events.class);
-            startActivity(intent);
+
         } else {
 
             Toast.makeText(getApplicationContext(), "Error in adding ", Toast.LENGTH_LONG).show();
         }
     }
+
+    public void back(View view){
+        Intent intent = new Intent(event_details.this,Add_events.class);
+        startActivity(intent);
+    }
+
+
 }
 
 
