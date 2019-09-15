@@ -11,7 +11,7 @@ import android.util.Log;
 import java.util.ArrayList;
 
 import Models.Fbudget;
-
+import Models.Hevent;
 
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -87,6 +87,17 @@ public class DBHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
+
+        public Cursor getListEvents(){
+
+            SQLiteDatabase db = this.getWritableDatabase();
+            Cursor data = db.rawQuery("SELECT * FROM " +TABLE_NAME,null);
+            return data;
+
+        }
+
+
 
     //himasha
 
