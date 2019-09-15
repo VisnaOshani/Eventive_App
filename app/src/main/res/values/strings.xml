@@ -42,6 +42,13 @@
         <item>Photo and video</item>
         <item>Transportation</item>
     </string-array>
+    <string name="one">Name</string>
+    <string name="two">Date</string>
+    <string name="three">location</string>
+    <string name="four">note</string>
+    <string name="button">Save</string>
+    <string name="five">locate</string>
+    <string name="btncalander">bcal</string>
 
 
     <string name="editBudDetails">Edit Details</string>

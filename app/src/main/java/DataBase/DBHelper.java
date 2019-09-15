@@ -5,15 +5,30 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
 import android.util.Log;
 
 import java.util.ArrayList;
 
 import Models.Fbudget;
 
+
+
 public class DBHelper extends SQLiteOpenHelper {
 
+
+    //himasaha
     public static final String DB_NAME = "event.db";
+    public static final String TABLE_NAME = "user";
+    public static final String COL_1 = "ID";
+    public static final String COL_2 = "Name";
+    public static final String COL_3 = "date";
+    public static final String COL_4 = "location";
+    public static final String COL_5 = "notes";
+
+
+
+
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, 1);
@@ -22,7 +37,13 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        String create_table_budget = "CREATE TABLE " + EventMaster.budget.TABLE_NAME + " (" +
+
+        //himasha
+        db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,DATE TEXT,LOCATION TEXT,NOTES TEXT)");
+
+
+
+    String create_table_budget = "CREATE TABLE " + EventMaster.budget.TABLE_NAME + " (" +
                 EventMaster.budget._ID + " INTEGER PRIMARY KEY, " +
                 EventMaster.budget.COLUMN_NOTE_+ " TEXT, " +
                 EventMaster.budget.COLUMN_TYPE + " TEXT, " +
@@ -31,21 +52,57 @@ public class DBHelper extends SQLiteOpenHelper {
                 EventMaster.budget.COLUMN_BALANCE + " TEXT);" ;
 
         db.execSQL(create_table_budget);
+
+
+
     }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
+    }
+
+   //himasha
+    public boolean addUser(String userName, String date,String loc,String not) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(COL_2, userName);
+        values.put(COL_3, date);
+        values.put(COL_4, loc);
+        values.put(COL_5, not);
+
+
+        long result = db.insert(TABLE_NAME,null, values);
+
+
+        if(result == -1){
+            //if data inserted succsessfully
+            return false;
+        }else{
+            //if data does not insert
+            return true;
+        }
+    }
+
+    //himasha
 
     public boolean addBud(String note,String type,String amount,String pamount,String balance){
 
         SQLiteDatabase db = getWritableDatabase();
-        int t = 10;
-        ContentValues contentValues = new ContentValues();
 
-        contentValues.put(EventMaster.budget.COLUMN_NOTE_,note);
-        contentValues.put(EventMaster.budget.COLUMN_TYPE,type);
+     ContentValues contentValues = new ContentValues();
+
+       contentValues.put(EventMaster.budget.COLUMN_NOTE_,note);
+       contentValues.put(EventMaster.budget.COLUMN_TYPE,type);
         contentValues.put(EventMaster.budget.COLUMN_AMOUNT,amount);
         contentValues.put(EventMaster.budget.COLUMN_PAMOUNT,pamount);
         contentValues.put(EventMaster.budget.COLUMN_BALANCE,balance);
 
-        long result = db.insert(EventMaster.budget.TABLE_NAME,null,contentValues);
+       long result = db.insert(EventMaster.budget.TABLE_NAME,null,contentValues);
 
         if(result > 0){
             return true;
@@ -54,10 +111,7 @@ public class DBHelper extends SQLiteOpenHelper {
         }
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
-    }
 
     public ArrayList<Fbudget> readAllBudget(){
         SQLiteDatabase db = getReadableDatabase();
@@ -82,6 +136,9 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return buds;
     }
+
+
+
 
     public void deleteRead(int id){
         SQLiteDatabase db = getReadableDatabase();

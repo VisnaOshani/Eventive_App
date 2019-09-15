@@ -30,6 +30,8 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
     private String label;
     private double bal;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

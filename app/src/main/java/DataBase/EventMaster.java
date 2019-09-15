@@ -14,4 +14,6 @@ public class EventMaster {
         protected static final String COLUMN_PAMOUNT = "pamount";
         protected static final String COLUMN_BALANCE = "balance";
     }
+
+
 }
