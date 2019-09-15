@@ -23,7 +23,7 @@
         <activity android:name=".Add_events" />
         <activity android:name=".Home" />
         <activity android:name=".Add_Budgets" />
-        <!--<activity android:name=".Budget_Details" />-->
+        <activity android:name=".Budget_Details" />
         <!--<activity android:name=".Login" />-->
         <!--<activity android:name=".MainActivity" />-->
     </application>

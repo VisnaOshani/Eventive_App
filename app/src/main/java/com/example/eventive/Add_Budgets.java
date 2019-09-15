@@ -86,6 +86,11 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         startActivity(intent);
     }
 
+    public void add(View view){
+        Intent in = new Intent(Add_Budgets.this, Budget_Details.class);
+        startActivity(in);
+    }
+
     public void back(View view){
         Intent intent = new Intent(Add_Budgets.this,Home.class);
         startActivity(intent);
