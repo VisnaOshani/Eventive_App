@@ -29,7 +29,7 @@ public class event_details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
 
-        //btnlis = findViewById(R.id.eventLis);
+        btnlis = findViewById(R.id.eventLis);
 
         txt_username = findViewById(R.id.one);
         txt_date = findViewById(R.id.two);
