@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -67,21 +68,35 @@ public class event_details extends AppCompatActivity {
 
     public void addInfro(View view) {
 
-        username = txt_username.getText().toString();
-        date = txt_date.getText().toString();
-        loication = loc_txt.getText().toString();
-        notes = not_txt.getText().toString();
+        if(TextUtils.isEmpty(txt_username.getText())|| TextUtils.isEmpty(txt_date.getText()) || TextUtils.isEmpty(loc_txt.getText() )) {
+
+            txt_username.setError("Enter Event name!");
+            txt_date.setError("Enter Date");
+            loc_txt.setError("Enter location");
+
+            txt_username.requestFocus();
+            txt_date.requestFocus();
+            loc_txt.requestFocus();
+
+        }
+        else{
+            username = txt_username.getText().toString();
+            date = txt_date.getText().toString();
+            loication = loc_txt.getText().toString();
+            notes = not_txt.getText().toString();
 
 
-        boolean result = db.addUser(username,date,loication,notes);
+            boolean result = db.addUser(username, date, loication, notes);
 
-        if (result == true) {
+            if (result == true) {
 
-            Toast.makeText(getApplicationContext(), "event added", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "event added", Toast.LENGTH_LONG).show();
 
-        } else {
+            } else {
 
-            Toast.makeText(getApplicationContext(), "Error in adding ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Error in adding ", Toast.LENGTH_LONG).show();
+            }
+
         }
     }
 
