@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".event_details">
+    tools:context=".Event_edit">
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/editTextview"
         android:layout_width="289dp"
         android:layout_height="68dp"
         android:layout_marginStart="8dp"
@@ -26,7 +27,7 @@
         app:layout_constraintVertical_bias="0.043" />
 
     <EditText
-        android:id="@+id/one"
+        android:id="@+id/editone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -45,7 +46,7 @@
         tools:text="@string/one" />
 
     <EditText
-        android:id="@+id/two"
+        android:id="@+id/edittwo"
         android:layout_width="251dp"
         android:layout_height="53dp"
         android:layout_marginStart="8dp"
@@ -64,7 +65,7 @@
         tools:text="@string/two" />
 
     <EditText
-        android:id="@+id/four"
+        android:id="@+id/editfour"
         android:layout_width="261dp"
         android:layout_height="142dp"
         android:layout_marginStart="8dp"
@@ -84,15 +85,14 @@
         tools:text="@string/four" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/editbutton"
         android:layout_width="118dp"
-        android:layout_height="61dp"
+        android:layout_height="52dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/evntbtn_curve"
-        android:onClick="addInfro"
         android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +103,7 @@
         tools:text="@string/button" />
 
     <EditText
-        android:id="@+id/five"
+        android:id="@+id/editfive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -122,7 +122,7 @@
         tools:text="@string/five" />
 
     <Button
-        android:id="@+id/btncalander"
+        android:id="@+id/editbtncalander"
         android:layout_width="68dp"
         android:layout_height="59dp"
         android:layout_marginStart="8dp"
@@ -137,7 +137,7 @@
         app:layout_constraintVertical_bias="0.254" />
 
     <Button
-        android:id="@+id/eventLis"
+        android:id="@+id/eventList"
         android:layout_width="118dp"
         android:layout_height="61dp"
         android:layout_marginStart="8dp"
@@ -152,5 +152,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.921" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

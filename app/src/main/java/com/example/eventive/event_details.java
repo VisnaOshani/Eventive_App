@@ -3,14 +3,18 @@ package com.example.eventive;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import android.widget.ListView;
 import android.widget.Toast;
 
+
+import java.sql.Time;
 
 import DataBase.DBHelper;
 
@@ -19,6 +23,7 @@ public class event_details extends AppCompatActivity {
     private static final String TAG = "event_details";
 
     Button btn,btnlis;
+
 
 
     EditText txt_username, txt_date, loc_txt, not_txt;
@@ -99,6 +104,10 @@ public class event_details extends AppCompatActivity {
 
         }
     }
+
+
+
+
 
     public void back(View view){
         Intent intent = new Intent(event_details.this,Add_events.class);

@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import android.renderscript.Sampler;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -26,8 +27,8 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String COL_4 = "location";
     public static final String COL_5 = "notes";
 
-
-
+        //
+        public static final String[] ALL_KEYS = new String[]{COL_1,COL_2,COL_3,COL_4,COL_5};
 
 
     public DBHelper(Context context) {
@@ -98,6 +99,89 @@ public class DBHelper extends SQLiteOpenHelper {
         }
 
 
+        public void deleteRow(long rowid){
+
+            SQLiteDatabase db = getReadableDatabase();
+
+
+            String Selection = COL_1+ " = ?";
+            String[] SelectionArgs = { String.valueOf(rowid)};
+
+            db.delete(TABLE_NAME , Selection ,SelectionArgs);
+            Log.i("DB","Delete :" + rowid );
+
+        }
+
+        public void deleteAll(){
+
+            SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = getAllRows();
+            long rowid = cursor.getColumnIndexOrThrow(COL_1);
+            if(cursor.moveToFirst()){
+                do {
+                    deleteRow(cursor.getLong((int) rowid));
+
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+
+
+        public Cursor getAllRows(){
+
+                SQLiteDatabase db = getReadableDatabase();
+
+            String where = null;
+            Cursor cursor = db.query(true, TABLE_NAME, ALL_KEYS, where, null, null, null, null, null);
+            if (cursor != null){
+
+                cursor.moveToFirst();
+            }
+
+            return cursor;
+
+
+
+            }
+
+
+        public boolean updaterowevnt(long rowId, String userName, String date,String loc,String not){
+
+            SQLiteDatabase db = this.getWritableDatabase();
+
+        String where = COL_1 + "=" + rowId;
+        ContentValues newVal = new ContentValues();
+            newVal.put(COL_2, userName);
+            newVal.put(COL_3, date);
+            newVal.put(COL_4, loc);
+            newVal.put(COL_5, not);
+
+            //inserting to database
+
+            return db.update(TABLE_NAME, newVal, where, null) != 0;
+
+        }
+
+    //
+        //get a specific row
+    public Cursor getErow(long rowid){
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        String where = COL_1 + "=" + rowid;
+        Cursor c = db.query(true, TABLE_NAME, ALL_KEYS,
+                where, null,null,null,null,null);
+
+        if (c != null){
+
+            c.moveToFirst();
+        }
+
+        return c;
+
+    }
+    //
 
     //himasha
 
