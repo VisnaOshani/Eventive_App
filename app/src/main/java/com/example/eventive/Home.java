@@ -14,7 +14,7 @@ public class Home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
     }
 
-    public void budget(View view){
+   public void budget(View view){
         Intent intent = new Intent(Home.this,Add_Budgets.class);
         startActivity(intent);
     }
@@ -25,6 +25,9 @@ public class Home extends AppCompatActivity {
     }
 
 
-
+//    public void shopping(View view){
+//        Intent intent = new Intent(this,shopping_main.class);
+//        startActivity(intent);
+//    }
 }
 
