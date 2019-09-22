@@ -93,14 +93,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/evntbtn_curve"
-        android:text="SAVE"
+        android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92"
-        tools:text="@string/button" />
+        tools:text="@string/editbutton" />
 
     <EditText
         android:id="@+id/editfive"

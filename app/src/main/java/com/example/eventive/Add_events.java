@@ -7,6 +7,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 
@@ -17,6 +19,7 @@ import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -24,10 +27,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 
+
+
 public class Add_events extends Event_edit {
 
 
-        Button bee;
+    private ArrayAdapter adapter;
+        EditText theFilter;
         DBHelper Hdb;
        Event_edit eve;
 
@@ -35,6 +41,9 @@ public class Add_events extends Event_edit {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_events);
+
+        //
+
 
         eve = new Event_edit();
 
@@ -59,10 +68,6 @@ public class Add_events extends Event_edit {
 
         //
 
-
-
-
-
        ArrayList<String> HList = new ArrayList<>();
         Cursor data = Hdb.getListEvents();
 
@@ -73,12 +78,31 @@ public class Add_events extends Event_edit {
             while (data.moveToNext()) {
 
                 HList.add(data.getString(1));
-                final ListAdapter listAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, HList);
+                adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, HList);
+
+                evenlist.setAdapter(adapter);
 
 
 
+                theFilter = findViewById(R.id.Esearch);
 
-                evenlist.setAdapter(listAdapter);
+                theFilter.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                        (Add_events.this).adapter.getFilter().filter(charSequence);
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable editable) {
+
+                    }
+                });
+
 
             }
 
@@ -130,11 +154,13 @@ public class Add_events extends Event_edit {
 
         public void onClick_deleteall(View view){
 
-            final ListView evenlist = findViewById(R.id.eventList);
+
 
         Hdb.deleteAll();
-        evenlist.deferNotifyDataSetChanged();
-        populateListview();
+
+            Intent intent = new Intent(this,Add_events.class);
+            startActivity(intent);
+
 
     }
 
@@ -158,8 +184,8 @@ public class Add_events extends Event_edit {
 
 
 
+                            //eve.updatevent(id);
                             viewevents(id);
-                            updatevent(id);
 
 
                             Intent intent = new Intent(Add_events.this, Event_edit.class);
