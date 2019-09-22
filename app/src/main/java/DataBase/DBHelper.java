@@ -214,7 +214,8 @@ public class DBHelper extends SQLiteOpenHelper {
     //visna start
     public ArrayList<Fbudget> readAllBudget(){
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = {EventMaster.budget.COLUMN_NOTE_,EventMaster.budget._ID , EventMaster.budget.COLUMN_AMOUNT , EventMaster.budget.COLUMN_TYPE , EventMaster.budget.COLUMN_BALANCE};
+        String[] projection = {EventMaster.budget.COLUMN_NOTE_,EventMaster.budget._ID , EventMaster.budget.COLUMN_AMOUNT , EventMaster.budget.COLUMN_TYPE , EventMaster.budget.COLUMN_BALANCE ,
+           EventMaster.budget.COLUMN_PAMOUNT };
 
         String sortOrder = EventMaster.budget.COLUMN_AMOUNT;
 
@@ -230,6 +231,8 @@ public class DBHelper extends SQLiteOpenHelper {
             bud.setType( budtype );
             bud.setNote( budnote);
             bud.setBalance( budbala );
+            bud.setAmount(  values.getString( values.getColumnIndexOrThrow( EventMaster.budget.COLUMN_AMOUNT )));
+            bud.setPamount(  values.getString( values.getColumnIndexOrThrow( EventMaster.budget.COLUMN_PAMOUNT  )));
             bud.setID( values.getInt( values.getColumnIndexOrThrow( EventMaster.budget._ID)));
             buds.add( bud );
         }
@@ -253,19 +256,25 @@ public class DBHelper extends SQLiteOpenHelper {
     //visna delete end
 
     //visna edit/update
-    public void editBudget(String id, String note, String amount,String type, String pamount){
+    public boolean editBudget(String id, String note, String amount,String type, String pamount ,String balance ){
         SQLiteDatabase db = getReadableDatabase();
-
+        Log.i("ID" , "ID : " + id );
         ContentValues contentvalues = new ContentValues();
         contentvalues.put(EventMaster.budget.COLUMN_NOTE_,note);
         contentvalues.put(EventMaster.budget.COLUMN_TYPE,type);
         contentvalues.put(EventMaster.budget.COLUMN_AMOUNT, amount);
         contentvalues.put(EventMaster.budget.COLUMN_PAMOUNT,pamount);
-
+        contentvalues.put(EventMaster.budget.COLUMN_BALANCE ,balance );
+    Log.i("ID" , "ID : " + id );
         String Selection = EventMaster.budget._ID + "= ?";
         String SelectionArgs[] = {id};
 
-        db.update(EventMaster.budget.TABLE_NAME, contentvalues, Selection, SelectionArgs);
+          long result =  db.update(EventMaster.budget.TABLE_NAME, contentvalues, Selection, SelectionArgs);
+          if( result > 0 ){
+              return true;
+          }else{
+              return false;
+          }
     }
     //visna edit/update end
 

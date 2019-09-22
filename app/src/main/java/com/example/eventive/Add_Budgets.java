@@ -109,11 +109,12 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
     //view layout
     @Override
     public void onBudgetClick(int position) {
+
         r = arrayList.get(position);
         Intent intent = new Intent(this,EditDetails.class);
-        intent.putExtra("ID", r.getID()+"");
         ID = String.valueOf(r.getID());
-        Log.i("ID in Budget act: ", ID);
+        Log.i("DB", "FROM AB : " + ID);
+        intent.putExtra("ID", ID);
         intent.putExtra("note", r.getNote());
         intent.putExtra("type", r.getType());
         intent.putExtra("eamount", r.getAmount());
