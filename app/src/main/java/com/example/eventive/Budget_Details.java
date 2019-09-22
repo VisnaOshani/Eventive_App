@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
@@ -37,6 +38,7 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_budget__details);
 
+        //spinner
         Spinner spinner = findViewById(R.id.spinner2);
         ArrayAdapter<String> adapter =  new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.category_arrays));
 
@@ -48,7 +50,9 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         txtnote = findViewById(R.id.nameV);
         txttype = findViewById(R.id.spinner2);
         txtamount =findViewById(R.id.estimatedAmount);
+        txtamount.setInputType(InputType.TYPE_CLASS_NUMBER);
         txtpamount = findViewById(R.id.paidAmount);
+        txtpamount.setInputType(InputType.TYPE_CLASS_NUMBER);
         txtbalance = findViewById(R.id.balance);
 
 
@@ -57,6 +61,7 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         Amount = txtamount.getText().toString();
         Pamount = txtpamount.getText().toString();
 
+        //balance calculation part
         txtpamount.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
@@ -81,6 +86,7 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         });
     }
 
+    //insert
     public void addBudget(View view){
 
         if (TextUtils.isEmpty(txtnote.getText())|| TextUtils.isEmpty(txtamount.getText()) || TextUtils.isEmpty(txtpamount.getText() )){
@@ -115,10 +121,10 @@ public class Budget_Details extends AppCompatActivity implements AdapterView.OnI
         }
    }
 
-    public void saveBudgets(View view){
-        Intent intent = new Intent(Budget_Details.this,Add_Budgets.class);
-        startActivity(intent);
-    }
+//    public void saveBudgets(View view){
+//        Intent intent = new Intent(Budget_Details.this,Add_Budgets.class);
+//        startActivity(intent);
+//    }
 
     public void backToBudgets(View view){
         Intent intent = new Intent(Budget_Details.this,Add_Budgets.class);

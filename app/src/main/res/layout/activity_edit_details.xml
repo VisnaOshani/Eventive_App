@@ -7,6 +7,23 @@
     android:background="@drawable/background"
     tools:context=".EditDetails">
 
+    <ImageView
+        android:id="@+id/back3"
+        android:layout_width="69dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="backToAddBudgets"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/backbtn" />
+
     <Button
         android:id="@+id/editBtn"
         android:layout_width="178dp"
@@ -17,7 +34,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/imgbtn_curve"
         android:elevation="30dp"
-        android:text="@string/saveV"
+        android:text="@string/update"
         android:textColor="@android:color/black"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +52,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/budDetails"
+        android:text="@string/editBudDetails"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textSize="28sp"

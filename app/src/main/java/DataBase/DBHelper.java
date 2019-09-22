@@ -37,9 +37,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
-
         //himasha
+
+        //visna start
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,DATE TEXT,LOCATION TEXT,NOTES TEXT)");
 
 
@@ -64,6 +64,8 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
+    //visna end
+
 
    //himasha
     public boolean addUser(String userName, String date,String loc,String not) {
@@ -185,19 +187,20 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //himasha
 
+    //visna insert data start
     public boolean addBud(String note,String type,String amount,String pamount,String balance){
 
-        SQLiteDatabase db = getWritableDatabase();
+            SQLiteDatabase db = getWritableDatabase();
 
-     ContentValues contentValues = new ContentValues();
+            ContentValues contentValues = new ContentValues();
 
-       contentValues.put(EventMaster.budget.COLUMN_NOTE_,note);
-       contentValues.put(EventMaster.budget.COLUMN_TYPE,type);
-        contentValues.put(EventMaster.budget.COLUMN_AMOUNT,amount);
-        contentValues.put(EventMaster.budget.COLUMN_PAMOUNT,pamount);
-        contentValues.put(EventMaster.budget.COLUMN_BALANCE,balance);
+            contentValues.put(EventMaster.budget.COLUMN_NOTE_,note);
+            contentValues.put(EventMaster.budget.COLUMN_TYPE,type);
+            contentValues.put(EventMaster.budget.COLUMN_AMOUNT,amount);
+            contentValues.put(EventMaster.budget.COLUMN_PAMOUNT,pamount);
+            contentValues.put(EventMaster.budget.COLUMN_BALANCE,balance);
 
-       long result = db.insert(EventMaster.budget.TABLE_NAME,null,contentValues);
+            long result = db.insert(EventMaster.budget.TABLE_NAME,null,contentValues);
 
         if(result > 0){
             return true;
@@ -205,9 +208,10 @@ public class DBHelper extends SQLiteOpenHelper {
             return false;
         }
     }
+    //visna insert data end
 
 
-
+    //visna start
     public ArrayList<Fbudget> readAllBudget(){
         SQLiteDatabase db = getReadableDatabase();
         String[] projection = {EventMaster.budget.COLUMN_NOTE_,EventMaster.budget._ID , EventMaster.budget.COLUMN_AMOUNT , EventMaster.budget.COLUMN_TYPE , EventMaster.budget.COLUMN_BALANCE};
@@ -231,10 +235,12 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return buds;
     }
+    //visna end
 
 
 
 
+    //visna delete
     public void deleteRead(int id){
         SQLiteDatabase db = getReadableDatabase();
 
@@ -244,7 +250,9 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete(EventMaster.budget.TABLE_NAME , Selection ,SelectionArgs);
         Log.i("DB","Delete :" + id );
     }
+    //visna delete end
 
+    //visna edit/update
     public void editBudget(String id, String note, String amount,String type, String pamount){
         SQLiteDatabase db = getReadableDatabase();
 
@@ -259,6 +267,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
         db.update(EventMaster.budget.TABLE_NAME, contentvalues, Selection, SelectionArgs);
     }
+    //visna edit/update end
 
 
 

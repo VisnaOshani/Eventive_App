@@ -3,7 +3,7 @@
 
     <string name="saveV">SAVE</string>
     <string name="delete">DELETE</string>
-
+    <string name="back"></string>
     <string name="spinner">Category</string>
     <string name="spinner2">Category</string>
 
@@ -11,6 +11,7 @@
 
     <string name="category_drop_down">Choose a category</string>
     <string name="budDetails">Budget Details</string>
+    <string name="addBudget">Add Budget</string>
     <string name="nameV"></string>
     <string name="estimatedAmount" />
     <string name="paidAmount" />
@@ -57,5 +58,8 @@
     <string name="paidAmountedit"></string>
     <string name="balanceedit"></string>
     <string name="savevedit">SAVE</string>
+    <string name="swipe">Swipe To Delete!!!</string>
+    <string name="update">UPDATE</string>
+
 
 </resources>

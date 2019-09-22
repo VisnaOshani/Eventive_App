@@ -29,6 +29,7 @@ public class EditDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_details);
 
+        //update spinner
         Spinner spinner = findViewById(R.id.spinner2);
         ArrayAdapter<String> adapter =  new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.category_arrays));
 
@@ -37,6 +38,7 @@ public class EditDetails extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        //update other details
         ID = intent.getIntExtra("ID", 0) + "";
         String note = intent.getStringExtra("note");
         String type = intent.getStringExtra("type");
@@ -52,15 +54,16 @@ public class EditDetails extends AppCompatActivity {
 
 
         txtn.setText(note);
-        txtp.setText(amount);
+        txta.setText(amount);
+        txtp.setText(pamount);
         spinner.setAdapter(adapter);
 
         int id = SetSpinnerSelection(getResources().getStringArray(R.array.category_arrays),type);
-        txta.setText(pamount);
         spinner.setSelection( id );
 
     }
 
+    //set spinner for update
     public int SetSpinnerSelection(String[] array,String text) {
         for(int i=0;i<array.length;i++) {
             if(array[i].equals(text)) {
@@ -68,5 +71,10 @@ public class EditDetails extends AppCompatActivity {
             }
         }
         return 0;
+    }
+
+    public void backToAddBudgets(View view){
+        Intent intent = new Intent(EditDetails.this,Add_Budgets.class);
+        startActivity(intent);
     }
 }

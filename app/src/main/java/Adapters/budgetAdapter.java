@@ -3,6 +3,7 @@ package Adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import com.example.eventive.R;
 import java.util.ArrayList;
 import Models.Fbudget;
 
+//recycle view for adapter
 public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdapterViewHolder> {
 
     private ArrayList<Fbudget> arrayList;
@@ -31,12 +33,13 @@ public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdap
         return new budgetAdapterViewHolder(v, vBudgetListener);
     }
 
+    //view layout
     @Override
     public void onBindViewHolder(@NonNull budgetAdapterViewHolder holder, int i) {
         Fbudget object =arrayList.get(i);
         holder.note.setText(object.getNote());
         holder.type.setText( object.getType());
-        holder.balance.setText( object.getBalance() );
+        holder.balance.setText( object.getBalance());
 
     }
 
@@ -45,12 +48,13 @@ public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdap
         return arrayList.size();
     }
 
+    //search
     public void filterList(ArrayList<Fbudget> filteredList) {
         arrayList = filteredList;
         notifyDataSetChanged();
     }
 
-
+    //view layout
     public static class budgetAdapterViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView note;
         TextView type;
@@ -74,6 +78,7 @@ public class budgetAdapter extends RecyclerView.Adapter<budgetAdapter.budgetAdap
 
     }
 
+    //to go edit interface position
     public interface OnBudgetListener{
         void onBudgetClick(int position);
     }

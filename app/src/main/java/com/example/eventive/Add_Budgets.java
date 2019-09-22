@@ -37,6 +37,7 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__budgets);
 
+        //search part
         EditText editText = findViewById(R.id.editTextV);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -68,7 +69,7 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         new ItemTouchHelper(itemTouchHelprcallback).attachToRecyclerView(rv);
 
     }
-
+    //search
     private void filter(String text){
         ArrayList<Fbudget> filteredList = new ArrayList<>();
 
@@ -81,11 +82,6 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         adapter.filterList(filteredList);
     }
 
-    public void addBudgets(View view){
-        Intent intent = new Intent(Add_Budgets.this,Budget_Details.class);
-        startActivity(intent);
-    }
-
     public void add(View view){
         Intent in = new Intent(Add_Budgets.this, Budget_Details.class);
         startActivity(in);
@@ -95,7 +91,7 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         Intent intent = new Intent(Add_Budgets.this,Home.class);
         startActivity(intent);
     }
-
+    //delete
     ItemTouchHelper.SimpleCallback itemTouchHelprcallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -110,7 +106,7 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         }
     };
 
-
+    //view layout
     @Override
     public void onBudgetClick(int position) {
         r = arrayList.get(position);
