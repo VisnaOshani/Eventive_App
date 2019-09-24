@@ -101,7 +101,7 @@ public class Add_Budgets extends AppCompatActivity implements budgetAdapter.OnBu
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
             int deleteid = arrayList.get(viewHolder.getAdapterPosition()).getID();
-            db.deleteRead(deleteid);
+            db.deleteAll(deleteid);
             Toast.makeText(getApplicationContext(),"Deleted!",Toast.LENGTH_LONG).show();
         }
     };

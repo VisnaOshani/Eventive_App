@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import Models.AddGuest;
+
 public class Home extends AppCompatActivity {
 
     @Override
@@ -23,11 +25,16 @@ public class Home extends AppCompatActivity {
         Intent intent = new Intent(Home.this,Add_events.class);
         startActivity(intent);
     }
+//oshadi's add guest
 
+    public void guest(View view){
+        Intent intent = new Intent(Home.this,Add_Guests.class);
+        startActivity(intent);
+    }
 
 //    public void shopping(View view){
-//        Intent intent = new Intent(this,shopping_main.class);
-//        startActivity(intent);
-//    }
+//       Intent intent = new Intent(this,shopping_main.class);
+//       startActivity(intent);
+//  }
 }
 

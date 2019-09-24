@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Event_edit"></activity>
+        <activity android:name=".View_guest"></activity>
+        <activity android:name=".guest_login" />
+        <activity android:name=".Guest_Details" />
+        <activity android:name=".Add_Guests" />
+        <activity android:name=".Event_edit" />
         <activity android:name=".EditDetails" /> <!-- <activity android:name=".shopping_main" /> -->
         <activity android:name=".Calander_view" />
         <activity android:name=".event_details" />
@@ -24,6 +28,8 @@
         <activity android:name=".Home" />
         <activity android:name=".Add_Budgets" />
         <activity android:name=".Budget_Details" />
+        <activity android:name=".Login" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

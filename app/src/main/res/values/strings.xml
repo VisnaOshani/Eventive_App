@@ -9,6 +9,9 @@
 
     <string name="banner4">Event List</string>
 
+    <string name="splashView"> WELCOME TO EVENTIVE</string>
+
+
     <string name="category_drop_down">Choose a category</string>
     <string name="budDetails">Budget Details</string>
     <string name="addBudget">Add Budget</string>
@@ -32,6 +35,23 @@
     <string name="rviewv"></string>
     <string name="addv"></string>
 
+
+    <string name="txtViewFName">First Name</string>
+    <string name="txtViewLName">Last Name</string>
+    <string name="noOfPeople">No of Guests</string>
+    <string name="txtGaddress">Address</string>
+    <string name="mobNo">Mobile Number</string>
+    <string name="email">e- mail</string>
+    <string name="confirm">Confirm Participation</string>
+    <string name="btnSave">Save</string>
+    <string name="Guest_Login">Guest Login</string>
+    <string name="guestLogin">Guest Login</string>
+    <string name="show_guests">Guests</string>
+    <string name="BtnUpdateO">Update Guests</string>
+    <string name="BtnDeleteO">Delete Guest</string>
+    <string name="viewGuestsO">View Guest</string>
+    <string name="Guests" />
+    <string name="guest">guest</string>
 
     <string-array name="category_arrays">
         <item>Accessories</item>

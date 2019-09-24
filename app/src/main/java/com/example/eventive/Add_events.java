@@ -1,7 +1,6 @@
 package com.example.eventive;
 
 import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,7 +12,6 @@ import android.view.View;
 import DataBase.DBHelper;
 
 
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -132,7 +130,8 @@ public class Add_events extends Event_edit {
 
             final ListView evenlist = findViewById(R.id.eventList);
 
-        Hdb.deleteAll();
+            
+            Hdb.deleteAll(DEFAULT_KEYS_DIALER);
         evenlist.deferNotifyDataSetChanged();
         populateListview();
 
