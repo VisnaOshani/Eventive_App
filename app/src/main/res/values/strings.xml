@@ -80,6 +80,7 @@
     <string name="savevedit">SAVE</string>
     <string name="swipe">Swipe To Delete!!!</string>
     <string name="update">UPDATE</string>
+    <string name="editbutton">Update</string>
 
 
 </resources>
